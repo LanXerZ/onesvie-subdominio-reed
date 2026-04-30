@@ -1,0 +1,984 @@
+/**
+ * Estilos del Portal de Capacitación ONESVIE
+ * Basado en el Sistema de Diseño Dominicano (SDD)
+ * Paleta oficial: #0F539C (primario), #9FD0FD (claro), #66A1DE (medio)
+ */
+
+/* ============================================
+   RESET Y VARIABLES CSS
+   ============================================ */
+
+:root {
+  --color-primario: #0F539C;
+  --color-primario-oscuro: #0a3d73;
+  --color-primario-claro: #9FD0FD;
+  --color-primario-medio: #66A1DE;
+  --color-blanco: #FFFFFF;
+  --color-gris-oscuro: #333333;
+  --color-gris-medio: #666666;
+  --color-gris-claro: #F5F7FA;
+  --color-gris-borde: #D9D9D9;
+  --color-texto: #333333;
+  --color-fondo: #FFFFFF;
+  --color-acento: #0A84FF;
+  --color-exito: #28A745;
+  --color-alerta: #FFC107;
+  --sombra-suave: 0 2px 8px rgba(0,0,0,0.08);
+  --sombra-media: 0 4px 16px rgba(0,0,0,0.12);
+  --sombra-fuerte: 0 8px 32px rgba(0,0,0,0.16);
+  --radio-borde: 4px;
+  --transicion: all 0.3s ease;
+  --max-ancho: 1200px;
+  --espaciado-seccion: 60px;
+}
+
+/* ============================================
+   TIPOGRAFIA
+   ============================================ */
+
+body {
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--color-texto);
+  line-height: 1.6;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-fondo);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 0;
+  color: var(--color-primario);
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--color-primario);
+  text-decoration: none;
+  transition: var(--transicion);
+}
+
+a:hover, a:focus {
+  color: var(--color-primario-oscuro);
+  text-decoration: underline;
+}
+
+/* ============================================
+   UTILIDADES
+   ============================================ */
+
+.contenedor {
+  max-width: var(--max-ancho);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.seccion {
+  padding: var(--espaciado-seccion) 0;
+}
+
+.seccion-alternada {
+  background-color: var(--color-gris-claro);
+}
+
+.texto-centrado {
+  text-align: center;
+}
+
+/* ============================================
+   BARRA SUPERIOR GUBERNAMENTAL
+   ============================================ */
+
+.barra-gobierno {
+  background-color: var(--color-primario-oscuro);
+  color: var(--color-blanco);
+  font-size: 0.8rem;
+  padding: 6px 0;
+  text-align: center;
+}
+
+.barra-gobierno .contenedor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.barra-gobierno a {
+  color: var(--color-primario-claro);
+  font-size: 0.8rem;
+}
+
+.barra-gobierno a:hover {
+  color: var(--color-blanco);
+  text-decoration: none;
+}
+
+.enlace-gobdo {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.header {
+  background-color: var(--color-blanco);
+  box-shadow: var(--sombra-suave);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header .contenedor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-area img {
+  height: 56px;
+  width: auto;
+}
+
+.logo-texto {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-texto .titulo-institucion {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primario);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.logo-texto .subtitulo-institucion {
+  font-size: 0.75rem;
+  color: var(--color-gris-medio);
+  margin: 0;
+}
+
+/* ============================================
+   NAVEGACION
+   ============================================ */
+
+.nav-principal ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 24px;
+}
+
+.nav-principal a {
+  color: var(--color-gris-oscuro);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
+  transition: var(--transicion);
+}
+
+.nav-principal a:hover,
+.nav-principal a.activo {
+  color: var(--color-primario);
+  border-bottom-color: var(--color-primario);
+  text-decoration: none;
+}
+
+.btn-menu-movil {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--color-primario);
+  cursor: pointer;
+  padding: 8px;
+}
+
+/* ============================================
+   HERO / BANNER
+   ============================================ */
+
+.hero {
+  background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-primario-oscuro) 100%);
+  color: var(--color-blanco);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  color: var(--color-blanco);
+  font-size: 2.25rem;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  opacity: 0.9;
+  max-width: 700px;
+  margin: 0 auto 32px;
+}
+
+/* ============================================
+   BOTONES
+   ============================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radio-borde);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: var(--transicion);
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+.btn-primario {
+  background-color: var(--color-blanco);
+  color: var(--color-primario);
+  border-color: var(--color-blanco);
+}
+
+.btn-primario:hover {
+  background-color: transparent;
+  color: var(--color-blanco);
+  text-decoration: none;
+}
+
+.btn-secundario {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  border-color: var(--color-primario);
+}
+
+.btn-secundario:hover {
+  background-color: var(--color-primario-oscuro);
+  border-color: var(--color-primario-oscuro);
+  text-decoration: none;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primario);
+  border-color: var(--color-primario);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  text-decoration: none;
+}
+
+.btn-sm {
+  padding: 8px 20px;
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   TARJETAS DE ACCESO RAPIDO
+   ============================================ */
+
+.accesos-rapidos {
+  margin-top: -40px;
+  padding-bottom: 60px;
+}
+
+.grid-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.tarjeta {
+  background: var(--color-blanco);
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra-media);
+  padding: 32px 24px;
+  transition: var(--transicion);
+  border-top: 4px solid var(--color-primario);
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-fuerte);
+}
+
+.tarjeta-icono {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  color: var(--color-primario);
+}
+
+.tarjeta h3 {
+  margin-bottom: 12px;
+}
+
+.tarjeta p {
+  color: var(--color-gris-medio);
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+/* ============================================
+   SECCION DESCRIPCION
+   ============================================ */
+
+.descripcion-institucional {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.descripcion-institucional h2 {
+  margin-bottom: 20px;
+}
+
+.descripcion-institucional p {
+  color: var(--color-gris-medio);
+  font-size: 1.05rem;
+}
+
+/* ============================================
+   SECCION OFERTA ACADEMICA (VISTA PREVIA)
+   ============================================ */
+
+.oferta-previa h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.tabla-cursos {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-blanco);
+  box-shadow: var(--sombra-suave);
+  border-radius: var(--radio-borde);
+  overflow: hidden;
+}
+
+.tabla-cursos thead {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+}
+
+.tabla-cursos th,
+.tabla-cursos td {
+  padding: 14px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-gris-borde);
+}
+
+.tabla-cursos tbody tr:hover {
+  background-color: var(--color-gris-claro);
+}
+
+.tabla-cursos td {
+  color: var(--color-gris-oscuro);
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.badge-presencial {
+  background-color: #E3F2FD;
+  color: #1565C0;
+}
+
+.badge-virtual {
+  background-color: #E8F5E9;
+  color: #2E7D32;
+}
+
+.badge-hibrido {
+  background-color: #FFF3E0;
+  color: #EF6C00;
+}
+
+/* ============================================
+   SECCION PROCESO (PASOS)
+   ============================================ */
+
+.proceso-seccion h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.pasos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.paso-item {
+  text-align: center;
+  padding: 24px;
+}
+
+.paso-numero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  border-radius: 50%;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.paso-item h4 {
+  margin-bottom: 8px;
+}
+
+.paso-item p {
+  color: var(--color-gris-medio);
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   SECCION NOTICIAS
+   ============================================ */
+
+.noticias-seccion h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.noticia-card {
+  background: var(--color-blanco);
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra-suave);
+  overflow: hidden;
+  transition: var(--transicion);
+}
+
+.noticia-card:hover {
+  box-shadow: var(--sombra-media);
+}
+
+.noticia-fecha {
+  font-size: 0.8rem;
+  color: var(--color-gris-medio);
+  padding: 16px 20px 0;
+}
+
+.noticia-card h4 {
+  padding: 8px 20px 12px;
+  margin: 0;
+}
+
+.noticia-card p {
+  padding: 0 20px 16px;
+  color: var(--color-gris-medio);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.noticia-enlace {
+  padding: 0 20px 20px;
+}
+
+.noticia-enlace a {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* ============================================
+   PAGINA INTERIOR - CABECERA
+   ============================================ */
+
+.cabecera-pagina {
+  background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-primario-oscuro) 100%);
+  color: var(--color-blanco);
+  padding: 48px 0;
+  text-align: center;
+}
+
+.cabecera-pagina h1 {
+  color: var(--color-blanco);
+  margin-bottom: 12px;
+}
+
+.migas-pan {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.migas-pan a {
+  color: var(--color-primario-claro);
+}
+
+.migas-pan a:hover {
+  color: var(--color-blanco);
+  text-decoration: none;
+}
+
+/* ============================================
+   CONTENIDO PAGINAS INTERNAS
+   ============================================ */
+
+.contenido-pagina {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contenido-pagina h2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--color-gris-borde);
+}
+
+.contenido-pagina h3 {
+  margin-top: 32px;
+}
+
+.contenido-pagina ul, .contenido-pagina ol {
+  padding-left: 24px;
+  margin-bottom: 20px;
+}
+
+.contenido-pagina li {
+  margin-bottom: 8px;
+  color: var(--color-gris-medio);
+}
+
+.marco-legal-box {
+  background-color: var(--color-gris-claro);
+  border-left: 4px solid var(--color-primario);
+  padding: 24px;
+  margin: 24px 0;
+  border-radius: 0 var(--radio-borde) var(--radio-borde) 0;
+}
+
+.marco-legal-box p {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.marco-legal-box strong {
+  color: var(--color-primario);
+}
+
+/* ============================================
+   FORMULARIOS
+   ============================================ */
+
+.formulario-grupo {
+  margin-bottom: 20px;
+}
+
+.formulario-grupo label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--color-gris-oscuro);
+  font-size: 0.95rem;
+}
+
+.formulario-grupo input,
+.formulario-grupo select,
+.formulario-grupo textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--color-gris-borde);
+  border-radius: var(--radio-borde);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: var(--transicion);
+  box-sizing: border-box;
+}
+
+.formulario-grupo input:focus,
+.formulario-grupo select:focus,
+.formulario-grupo textarea:focus {
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 3px rgba(15, 83, 156, 0.15);
+}
+
+.formulario-grupo textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* ============================================
+   TARJETAS DE CURSOS (PAGINA OFERTA)
+   ============================================ */
+
+.curso-tarjeta {
+  background: var(--color-blanco);
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra-suave);
+  padding: 28px;
+  margin-bottom: 24px;
+  border-left: 4px solid var(--color-primario);
+}
+
+.curso-tarjeta h3 {
+  margin-bottom: 12px;
+}
+
+.curso-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 16px 0;
+  font-size: 0.9rem;
+}
+
+.curso-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-gris-medio);
+}
+
+.curso-meta-item strong {
+  color: var(--color-gris-oscuro);
+}
+
+/* ============================================
+   CONTACTO
+   ============================================ */
+
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.info-contacto-item {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.info-contacto-icono {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-gris-claro);
+  border-radius: 50%;
+  color: var(--color-primario);
+  font-size: 1.1rem;
+}
+
+.info-contacto-texto h4 {
+  margin-bottom: 4px;
+  font-size: 1rem;
+}
+
+.info-contacto-texto p {
+  margin: 0;
+  color: var(--color-gris-medio);
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+  background-color: var(--color-gris-oscuro);
+  color: var(--color-blanco);
+  padding: 48px 0 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer h4 {
+  color: var(--color-blanco);
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.footer p {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+  transition: var(--transicion);
+}
+
+.footer-links a:hover {
+  color: var(--color-primario-claro);
+  text-decoration: none;
+}
+
+.footer-inferior {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.footer-inferior a {
+  color: rgba(255,255,255,0.7);
+}
+
+/* ============================================
+   BARRA DE TRANSPARENCIA
+   ============================================ */
+
+.barra-transparencia {
+  background-color: var(--color-gris-claro);
+  border-top: 1px solid var(--color-gris-borde);
+  padding: 16px 0;
+  text-align: center;
+}
+
+.barra-transparencia p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-gris-medio);
+}
+
+.barra-transparencia a {
+  color: var(--color-primario);
+  font-weight: 600;
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE FIRST
+   ============================================ */
+
+@media (max-width: 768px) {
+  :root {
+    --espaciado-seccion: 40px;
+  }
+
+  .barra-gobierno .contenedor {
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header .contenedor {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .logo-area {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo-area img {
+    height: 44px;
+  }
+
+  .btn-menu-movil {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  .nav-principal {
+    display: none;
+    width: 100%;
+  }
+
+  .nav-principal.activo {
+    display: block;
+  }
+
+  .nav-principal ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav-principal li {
+    border-bottom: 1px solid var(--color-gris-borde);
+  }
+
+  .nav-principal a {
+    display: block;
+    padding: 14px 0;
+  }
+
+  .hero {
+    padding: 48px 0;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .grid-tarjetas {
+    grid-template-columns: 1fr;
+  }
+
+  .pasos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contacto-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .tabla-cursos {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .cabecera-pagina {
+    padding: 36px 0;
+  }
+
+  .cabecera-pagina h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contenedor {
+    padding: 0 16px;
+  }
+
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.35rem; }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .tarjeta {
+    padding: 24px 20px;
+  }
+}
+
+/* ============================================
+   ACCESIBILIDAD
+   ============================================ */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primario);
+  outline-offset: 2px;
+}
+
+a:focus, button:focus {
+  outline: 2px solid var(--color-primario);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animar-entrada {
+  animation: aparecer 0.5s ease forwards;
+}
+
+/* ============================================
+   UTILIDADES ADICIONALES
+   ============================================ */
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: 8px; }
+.mt-2 { margin-top: 16px; }
+.mt-3 { margin-top: 24px; }
+.mt-4 { margin-top: 32px; }
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: 8px; }
+.mb-2 { margin-bottom: 16px; }
+.mb-3 { margin-bottom: 24px; }
+.mb-4 { margin-bottom: 32px; }
+
+.texto-primario { color: var(--color-primario); }
+.texto-gris { color: var(--color-gris-medio); }
+.fondo-gris { background-color: var(--color-gris-claro); }
