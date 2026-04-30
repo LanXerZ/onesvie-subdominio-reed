@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "titulo": "Formación y Capacitación Especializada en Evaluación Sísmica",
+    "subtitulo": "La ONESVIE pone a disposición de la ciudadanía, profesionales e instituciones del Estado dominicano un programa integral de formación orientado a fortalecer las capacidades técnicas para la evaluación de vulnerabilidad sísmica y la resiliencia de infraestructuras.",
+    "boton_texto": "Ver Oferta Académica",
+    "boton_enlace": "/oferta-academica/",
+    "imagen_fondo": "/img/banner-1.jpg",
+    "color_fondo": "linear-gradient(135deg, #0F539C 0%, #0a3d73 100%)",
+    "color_texto": "#FFFFFF",
+    "orden": 1,
+    "activo": true
+  },
+  {
+    "id": 2,
+    "titulo": "Inscripciones Abiertas 2026",
+    "subtitulo": "Programa de Evaluaciones Detalladas de Vulnerabilidad Sísmica - 80 horas académicas, modalidad híbrida. Cupo limitado hasta el 31 de mayo.",
+    "boton_texto": "Inscríbete Ahora",
+    "boton_enlace": "/inscripcion/",
+    "imagen_fondo": "/img/banner-2.jpg",
+    "color_fondo": "linear-gradient(135deg, #66A1DE 0%, #0F539C 100%)",
+    "color_texto": "#FFFFFF",
+    "orden": 2,
+    "activo": true
+  },
+  {
+    "id": 3,
+    "titulo": "Webinar: Actualizaciones a la Normativa Sismorresistente",
+    "subtitulo": "Actividad virtual gratuita dirigida a profesionales del sector de la construcción. Próxima sesión: 5 de mayo de 2026.",
+    "boton_texto": "Registrarse",
+    "boton_enlace": "/inscripcion/",
+    "imagen_fondo": "/img/banner-3.jpg",
+    "color_fondo": "linear-gradient(135deg, #9FD0FD 0%, #0F539C 100%)",
+    "color_texto": "#FFFFFF",
+    "orden": 3,
+    "activo": true
+  }
+]

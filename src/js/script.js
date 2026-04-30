@@ -6,6 +6,37 @@
 document.addEventListener('DOMContentLoaded', function() {
 
   // ============================
+  // Carrusel de Banners (Swiper)
+  // ============================
+  if (typeof Swiper !== 'undefined') {
+    new Swiper('.carrusel-banners', {
+      loop: true,
+      autoplay: {
+        delay: 6000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+      speed: 800,
+      accessibility: {
+        enabled: true,
+        slideRole: 'group',
+      },
+    });
+  }
+
+  // ============================
   // Menú móvil
   // ============================
   const btnMenu = document.getElementById('btnMenuMovil');
