@@ -1,0 +1,103 @@
+---
+title: "Inscripción"
+description: "Proceso de inscripción al programa de capacitación de la ONESVIE. Requisitos, formulario de preinscripción y orientaciones para participantes."
+---
+
+<section class="cabecera-pagina">
+  <div class="contenedor">
+    <div class="migas-pan">
+      <a href="{{ '/' | url }}">Inicio</a> / Inscripción
+    </div>
+    <h1>Proceso de Inscripción</h1>
+  </div>
+</section>
+
+<section class="seccion">
+  <div class="contenedor">
+    <article class="contenido-pagina">
+
+      <h2>Cómo Inscribirse</h2>
+      <p>El proceso de inscripción al programa de capacitación de la ONESVIE se realiza de manera sencilla y transparente. A continuación, se detallan los pasos que todo interesado debe seguir para formalizar su participación en los programas de formación ofrecidos por esta institución.</p>
+
+      <h2>Pasos del Proceso</h2>
+
+      <h3>Paso 1: Selección del Programa</h3>
+      <p>El interesado debe revisar la <a href="{{ '/oferta-academica/' | url }}">oferta académica disponible</a> y seleccionar el programa que mejor se ajuste a su perfil profesional y a sus necesidades de formación. Cada programa indica los requisitos específicos de elegibilidad, la modalidad y la duración.</p>
+
+      <h3>Paso 2: Verificación de Requisitos</h3>
+      <p>Antes de completar el formulario de inscripción, el solicitante debe asegurarse de cumplir con los siguientes requisitos generales:</p>
+      <ul>
+        <li>Ser mayor de edad y estar en pleno ejercicio de sus derechos ciudadanos.</li>
+        <li>Contar con la formación académica requerida para cada programa (según se especifica en la descripción de cada curso).</li>
+        <li>Disponer de un correo electrónico activo para recibir las comunicaciones oficiales.</li>
+        <li>Presentar copia de la cédula de identidad y electoral vigente.</li>
+        <li>Adjuntar hoja de vida o currículo actualizado.</li>
+        <li>En el caso de programas avanzados, presentar certificado del programa prerrequisito (cuando aplique).</li>
+      </ul>
+
+      <h3>Paso 3: Completar el Formulario de Preinscripción</h3>
+      <p>El solicitante debe completar el formulario de preinscripción disponible a continuación o acceder al <a href="https://forms.google.com" target="_blank" rel="noopener noreferrer">formulario en línea</a> habilitado por la ONESVIE. Todos los campos marcados con asterisco (*) son obligatorios.</p>
+
+      <h3>Paso 4: Revisión y Aceptación</h3>
+      <p>Una vez recibido el formulario, el equipo de capacitación de la ONESVIE revisará la documentación en un plazo no mayor de diez (10) días hábiles. El solicitante recibirá una notificación por correo electrónico con el resultado de su solicitud.</p>
+
+      <h3>Paso 5: Confirmación y Matrícula</h3>
+      <p>En caso de ser aceptado, el participante recibirá una comunicación oficial con los detalles de la matrícula, incluyendo la fecha de inicio, el horario, la plataforma (en caso de modalidad virtual) y cualquier orientación adicional.</p>
+
+      <h2>Formulario de Preinscripción</h2>
+      <form id="formInscripcion" action="#" method="POST" class="mt-3">
+        <div class="formulario-grupo">
+          <label for="nombre">Nombre completo *</label>
+          <input type="text" id="nombre" name="nombre" required placeholder="Ingrese su nombre completo">
+        </div>
+        <div class="formulario-grupo">
+          <label for="cedula">Cédula de Identidad y Electoral *</label>
+          <input type="text" id="cedula" name="cedula" required placeholder="000-0000000-0">
+        </div>
+        <div class="formulario-grupo">
+          <label for="email">Correo electrónico *</label>
+          <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+        </div>
+        <div class="formulario-grupo">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="(809) 000-0000">
+        </div>
+        <div class="formulario-grupo">
+          <label for="programa">Programa de interés *</label>
+          <select id="programa" name="programa" required>
+            <option value="">-- Seleccione un programa --</option>
+            <option value="evr">Evaluación Visual Rápida (EVR) de Edificaciones</option>
+            <option value="eval-detallada">Evaluaciones Detalladas de Vulnerabilidad Sísmica</option>
+            <option value="gestion-riesgo">Gestión del Riesgo Sísmico Institucional</option>
+            <option value="normativa">Normativa Sismorresistente Dominicana</option>
+            <option value="reforzamiento">Diseño de Soluciones Estructurales de Reforzamiento</option>
+            <option value="webinar-intro">Webinar: Introducción a la Vulnerabilidad Sísmica</option>
+          </select>
+        </div>
+        <div class="formulario-grupo">
+          <label for="profesion">Profesión / Ocupación *</label>
+          <input type="text" id="profesion" name="profesion" required placeholder="Ej: Ingeniero Civil, Arquitecto, etc.">
+        </div>
+        <div class="formulario-grupo">
+          <label for="institucion">Institución donde labora (opcional)</label>
+          <input type="text" id="institucion" name="institucion" placeholder="Nombre de la institución o empresa">
+        </div>
+        <div class="formulario-grupo">
+          <label for="mensaje">Observaciones o comentarios</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Indique cualquier información adicional que considere relevante..."></textarea>
+        </div>
+        <div class="formulario-grupo">
+          <label>
+            <input type="checkbox" required> Declaro que la información proporcionada es veraz y acepto las condiciones de uso de datos personales conforme a la política de privacidad de la ONESVIE. *
+          </label>
+        </div>
+        <button type="submit" class="btn btn-secundario">Enviar Preinscripción</button>
+      </form>
+
+      <p class="mt-3 texto-gris">
+        <strong>Nota:</strong> La entrega de este formulario no garantiza la aceptación automática. El proceso de selección se realiza conforme a los criterios de elegibilidad establecidos por la ONESVIE. Para consultas, comuníquese a través de los canales de contacto oficiales.
+      </p>
+
+    </article>
+  </div>
+</section>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es-DO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% if description %}
+  <meta name="description" content="{{ description }}">
+  {% endif %}
+  {% if keywords %}
+  <meta name="keywords" content="{{ keywords }}">
+  {% endif %}
+  <meta name="author" content="ONESVIE - Oficina Nacional de Evaluación Sísmica y Vulnerabilidad de Infraestructura y Edificaciones">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="{{ title }} | Portal de Capacitación - ONESVIE">
+  {% if description %}
+  <meta property="og:description" content="{{ description }}">
+  {% endif %}
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://capacitacion.onesvie.gob.do{{ page.url }}">
+  <meta property="og:image" content="{{ '/img/og-image.jpg' | url }}">
+  <link rel="canonical" href="https://capacitacion.onesvie.gob.do{{ page.url }}">
+  <title>{{ title }} | Portal de Capacitación - ONESVIE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/css/styles.css' | url }}">
+  <link rel="icon" type="image/x-icon" href="{{ '/img/favicon.ico' | url }}">
+</head>
+<body>
+
+  {% include 'barra-gobierno.njk' %}
+
+  {% include 'header.njk' %}
+
+  <main id="contenido-principal">
+    {{ content | safe }}
+  </main>
+
+  {% include 'barra-transparencia.njk' %}
+
+  {% include 'footer.njk' %}
+
+  <script src="{{ '/js/script.js' | url }}"></script>
+</body>
+</html>

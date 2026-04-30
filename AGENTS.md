@@ -15,30 +15,52 @@ Portal web institucional para el programa de formación y capacitación de la **
 
 ```
 Subdominio-reed/
-├── index.html                    - Página principal (hero, accesos rápidos, oferta, noticias)
-├── css/
-│   └── styles.css                - Estilos completos (SDD, responsive, accesibilidad)
-├── js/
-│   └── script.js                 - Menú móvil, validación formularios, scroll suave
-├── img/
-│   ├── LOGO_FAVICON01.jpg        - Logo institucional ONESVIE
-│   └── favicon.ico               - (pendiente)
-├── pages/
-│   ├── sobre-iniciativa.html     - Justificación, marco legal, objetivos
-│   ├── oferta-academica.html     - 6 programas de capacitación detallados
-│   ├── inscripcion.html          - Proceso + formulario con validación
-│   ├── noticias.html             - Noticias y avisos institucionales
-│   └── contacto.html             - Datos, formulario, mapa
-└── docs/
-    ├── guia-wordpress.md         - Guía de migración a WordPress
-    └── guia-hosting.md           - Guía de despliegue en hosting
+├── package.json                    - Configuración npm y scripts
+├── .eleventy.js                   - Configuración de Eleventy
+├── .eleventyignore               - Archivos ignorados por 11ty
+├── src/
+│   ├── _includes/                 - Plantillas reutilizables (Nunjucks)
+│   │   ├── base.njk              - Plantilla base (HTML, head, body)
+│   │   ├── header.njk            - Header + navegación
+│   │   ├── footer.njk            - Footer institucional
+│   │   ├── barra-gobierno.njk    - Barra superior gubernamental
+│   │   └── barra-transparencia.njk - Barra de transparencia
+│   ├── css/
+│   │   └── styles.css            - Estilos completos (SDD, responsive)
+│   ├── js/
+│   │   └── script.js             - Menú móvil, validación, scroll suave
+│   ├── img/
+│   │   └── LOGO_FAVICON01.jpg    - Logo institucional ONESVIE
+│   ├── index.njk                 - Página principal
+│   ├── sobre-iniciativa.njk      - Marco legal, objetivos
+│   ├── oferta-academica.njk      - 6 programas de capacitación
+│   ├── inscripcion.njk           - Proceso + formulario
+│   ├── noticias.njk              - Noticias y avisos
+│   ├── contacto.njk              - Datos, formulario, mapa
+│   └── docs/                     - Guías técnicas
+│       ├── guia-wordpress.md     - Migración a WordPress
+│       └── guia-hosting.md       - Despliegue en hosting
+├── _site/                        - Output estático (generado)
+└── AGENTS.md                     - Documentación del proyecto
 ```
+
+## Generador de Sitio Estático
+
+- **Herramienta**: Eleventy (11ty) - https://www.11ty.dev/
+- **Motor de plantillas**: Nunjucks (.njk)
+- **Output**: HTML/CSS/JS puro estático en `_site/`
+- **Comandos**:
+  - `npm start` - Servidor de desarrollo con live reload
+  - `npm run build` - Generar HTML estático en `_site/`
+- **Ventajas**: Componentes reutilizables (Header/Footer), mantenimiento simplificado, URLs limpias
 
 ## Tecnologías
 
 - HTML5 semántico (sin frameworks)
 - CSS3 nativo (variables CSS, grid, flexbox, mobile-first)
 - JavaScript vanilla (sin dependencias)
+- **Eleventy (11ty)** - Generador de sitio estático con plantillas Nunjucks
+- Node.js (solo en desarrollo, no en producción)
 - No se requieren herramientas de pago
 
 ## Marco Legal Referenciado
