@@ -7,7 +7,7 @@
     "boton_enlace": "",
     "imagen_fondo": "/img/banner-1.jpg",
     "color_fondo": "none",
-    "overlay_opacidad": 0.25,
+    "overlay_opacidad": 0.05,
     "mostrar_texto": false,
     "orden": 1,
     "activo": true
