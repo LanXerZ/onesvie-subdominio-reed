@@ -23,7 +23,7 @@
     "overlay_opacidad": 0.85,
     "mostrar_texto": true,
     "orden": 2,
-    "activo": true
+    "activo": false
   },
   {
     "id": 2,
@@ -36,7 +36,7 @@
     "overlay_opacidad": 0.85,
     "mostrar_texto": true,
     "orden": 3,
-    "activo": true
+    "activo": false
   },
   {
     "id": 3,
@@ -49,6 +49,6 @@
     "overlay_opacidad": 0.85,
     "mostrar_texto": true,
     "orden": 4,
-    "activo": true
+    "activo": false
   }
 ]
