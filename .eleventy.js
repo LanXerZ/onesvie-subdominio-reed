@@ -11,6 +11,7 @@ module.exports = function(eleventyConfig) {
       includes: "_includes",
       data: "_data"
     },
+    pathPrefix: "/onesvie-subdominio-reed/",
     templateFormats: ["njk", "html", "md"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk"
