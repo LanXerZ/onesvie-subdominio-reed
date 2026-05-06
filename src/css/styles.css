@@ -252,6 +252,7 @@ a:hover, a:focus {
   height: 500px;
   position: relative;
   overflow: hidden;
+  margin-bottom: var(--espaciado-seccion);
 }
 
 .carrusel-banners .swiper-slide {
