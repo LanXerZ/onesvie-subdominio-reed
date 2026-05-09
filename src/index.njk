@@ -10,7 +10,7 @@ layout: "base.njk"
   <div class="swiper-wrapper">
     {% for banner in banners | sort(attribute="orden") %}
     {% if banner.activo %}
-    <div class="swiper-slide banner-slide-{{ banner.id }}{% if not banner.mostrar_texto %} banner-slide-imagen{% endif %}" style="background-image: url('{{ banner.imagen_fondo | url }}'); background-color: {{ banner.color_fondo }}; background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="swiper-slide banner-slide-{{ banner.id }}{% if not banner.mostrar_texto %} banner-slide-imagen{% endif %}" style="{% if banner.mostrar_texto %}background-image: url('{{ banner.imagen_fondo | url }}'); background-size: cover; background-position: center; background-repeat: no-repeat;{% endif %} background-color: {{ banner.color_fondo }};">
       {% if banner.mostrar_texto %}
       <div class="banner-overlay" style="background: {{ banner.color_fondo }}; opacity: {{ banner.overlay_opacidad }};"></div>
       <div class="contenedor banner-contenido">
@@ -21,6 +21,7 @@ layout: "base.njk"
         {% endif %}
       </div>
       {% else %}
+      <img src="{{ banner.imagen_fondo | url }}" alt="Banner institucional ONESVIE" class="banner-img-completa" loading="lazy">
       <div class="banner-overlay banner-overlay-imagen" style="opacity: {{ banner.overlay_opacidad }};"></div>
       {% endif %}
     </div>

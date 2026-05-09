@@ -285,6 +285,15 @@ a:hover, a:focus {
   pointer-events: none;
 }
 
+.banner-img-completa {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  position: relative;
+  z-index: 0;
+}
+
 .carrusel-banners .banner-contenido {
   max-width: 800px;
   margin: 0 auto;
