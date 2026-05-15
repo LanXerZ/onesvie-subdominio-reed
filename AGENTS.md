@@ -20,14 +20,23 @@ Portal web institucional de ONESVIE como subdominio de onesvie.gob.do. Generado 
 
 ## Configuración Eleventy
 - Input: `src/`, Output: `_site/`
-- `pathPrefix: "/onesvie-subdominio-reed/"` para GitHub Pages
+- `pathPrefix: ""` (vacío — dominio personalizado, no subpath de GitHub Pages)
 - Archivos pasados directo: `src/css`, `src/js`, `src/img`, `src/docs`
 
-## Despliegue en GitHub Pages
+## Despliegue
+- Dominio personalizado: `http://reed.onesvie.gob.do/`
 - Workflow: `.github/workflows/build.yml`
-- Build type: `workflow` (usa GitHub Actions, no branch legacy)
+- Build type: `workflow` (GitHub Actions)
 - Despliegue automático en push a `main`
-- URL: https://lanxerz.github.io/onesvie-subdominio-reed/
+- URL alternativa: `https://lanxerz.github.io/onesvie-subdominio-reed/`
+
+## Branches
+| Branch | Uso |
+|--------|-----|
+| `main` | Producción (desplegado automáticamente) |
+| `Dev` | Desarrollo activo |
+| `test` | Pruebas |
+| `test-origin` | PRs y revisiones |
 
 ## Reglas de Desarrollo
 1. Mantener colores SDD; no introducir paletas diferentes
@@ -35,6 +44,10 @@ Portal web institucional de ONESVIE como subdominio de onesvie.gob.do. Generado 
 3. Accesibilidad obligatoria: aria-labels, semántica HTML, contraste
 4. Mobile-first: Todo debe funcionar en dispositivos móviles
 5. SEO: Mantener meta tags, títulos descriptivos, canonical URLs
+
+## Troubleshooting
+- **CSS no carga en localhost**: Eliminar carpeta `.cache` y `_site`, luego `npm run build`
+- **404 en GitHub Pages**: Verificar que `pathPrefix` sea `""` y build type sea `workflow` (no `legacy`)
 
 ## Referencias
 - Guías técnicas: `src/docs/guia-wordpress.md`, `src/docs/guia-hosting.md`
