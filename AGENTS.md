@@ -24,7 +24,7 @@ Portal web institucional de ONESVIE como subdominio de onesvie.gob.do. Generado 
 - Archivos pasados directo: `src/css`, `src/js`, `src/img`, `src/docs`
 
 ## Despliegue
-- Dominio personalizado: `http://reed.onesvie.gob.do/`
+- Dominio personalizado: `http://reed.onesvie.edu.do/`
 - Workflow: `.github/workflows/build.yml`
 - Build type: `workflow` (GitHub Actions)
 - Despliegue automático en push a `main`

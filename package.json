@@ -1,7 +1,7 @@
 {
   "name": "onesvie-subdominio-reed",
   "version": "1.0.0",
-  "description": "Portal de Capacitación ONESVIE - capacitacion.onesvie.gob.do",
+  "description": "Portal de Capacitación ONESVIE - reed.onesvie.edu.do",
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy"
