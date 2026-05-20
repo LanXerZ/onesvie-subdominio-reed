@@ -5,6 +5,20 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/docs");
   eleventyConfig.addPassthroughCopy("CNAME");
 
+  eleventyConfig.addFilter("dateFormat", function(dateString) {
+    if (!dateString) return "";
+    const date = new Date(dateString);
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString('es-DO', options);
+  });
+
+  eleventyConfig.addFilter("dateShort", function(dateString) {
+    if (!dateString) return "";
+    const date = new Date(dateString);
+    const meses = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
+    return date.getDate() + " " + meses[date.getMonth()] + " " + date.getFullYear();
+  });
+
   return {
     dir: {
       input: "src",
