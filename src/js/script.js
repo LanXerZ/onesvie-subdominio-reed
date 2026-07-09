@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const formContacto = document.getElementById('formContacto');
 
   if (formContacto) {
-    formContacto.addEventListener('submit', function(e) {
+    formContacto.addEventListener('submit', async function(e) {
       e.preventDefault();
 
       const nombre = document.getElementById('nombre-contacto').value.trim();
@@ -128,8 +128,29 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
       }
 
-      mostrarAlerta('Su mensaje ha sido enviado. Nuestro equipo le responderá a la brevedad posible.', 'exito');
-      formContacto.reset();
+      const btnSubmit = formContacto.querySelector('button[type="submit"]');
+      btnSubmit.disabled = true;
+      btnSubmit.textContent = 'Enviando...';
+
+      try {
+        const response = await fetch(formContacto.action, {
+          method: 'POST',
+          body: new FormData(formContacto),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          mostrarAlerta('Su mensaje ha sido enviado. Nuestro equipo le responderá a la brevedad posible.', 'exito');
+          formContacto.reset();
+        } else {
+          mostrarAlerta('Ocurrió un error al enviar el mensaje. Intente nuevamente.', 'error');
+        }
+      } catch (error) {
+        mostrarAlerta('Ocurrió un error de conexión. Verifique su internet e intente nuevamente.', 'error');
+      }
+
+      btnSubmit.disabled = false;
+      btnSubmit.textContent = 'Enviar Mensaje';
     });
   }
 
